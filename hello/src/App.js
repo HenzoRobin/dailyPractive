@@ -5,6 +5,10 @@ import Home from './components/home';
 
 class App extends Component {
   render() {
+    const user = {
+      name:'cc',
+      hobbies:['basketball','football'],
+    }
     return (
       <div className="container">
         <div className="row">
@@ -19,7 +23,7 @@ class App extends Component {
         </div>
         <div className="row">
           <div className="col-xs-1 col-xs-offset-11">
-            <Home/>  
+            <Home name={"MAX"} age={'12'} user={user}/>  
           </div>
         </div>
       </div>
