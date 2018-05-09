@@ -2,6 +2,16 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Home extends Component {
+  constructor(props){
+    super(props);
+    this.age = this.props.age;
+  }
+
+  onMakeOlder (){
+    this.age += 3;
+    console.log(this)
+  }
+
   render() {
     console.log(this.props)
     return (
@@ -9,10 +19,8 @@ class Home extends Component {
         <div className="row">
           <div className="col-xs-1 col-xs-offset-11">
             <h1>HOME</h1>
-            <h2>your name is {this.props.name}</h2>
-            <h2>your age is {this.props.age}</h2>
-            <h2>your hobbies is :</h2>
-            {this.props.user.hobbies.map( (hobby,idx) => <li key={idx}> {hobby} </li> ) }
+            <h2>you age is {this.age}</h2>
+            <button onClick={this.onMakeOlder.bind(this)} className="btn btn-primary">im button</button>
           </div>
           <h6>{this.props.children}</h6>
         </div>
