@@ -1,18 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 
-class Header extends Component {
-  render() {
+const Header = (props)=>  {
     return (
       <div className="container">
         <div className="row">
           <div className="col-xs-1 col-xs-offset-11">
-            <h1>HEADER</h1>
+            <h1>{props.imhome}</h1>
           </div>
         </div>
       </div>
     );
-  }
 }
 
 export default Header;

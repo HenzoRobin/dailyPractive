@@ -5,8 +5,21 @@ import Home from './components/home';
 import Headers from './components/noStateComponent'
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state={
+      imhome : 'Homeeeee',
+    }
+  }
+
   onGreet(age){
     alert(age)
+  }
+
+  changeName(newname){
+    this.setState({
+      imhome:newname
+    })
   }
 
   render() {
@@ -18,7 +31,7 @@ class App extends Component {
       <div className="container">
         <div className="row">
           <div className="col-xs-1 col-xs-offset-11">
-            <Header/>
+            <Header imhome = {this.state.imhome}/>
           </div>
         </div>
 
@@ -30,7 +43,7 @@ class App extends Component {
 
         <div className="row">
           <div className="col-xs-1 col-xs-offset-11">
-            <Home name={"MAX"} age={12} user={user} greet={this.onGreet}> 
+            <Home name={"MAX"} age={12} user={user} greet={this.onGreet} changeName={this.changeName.bind(this)}> 
               <p>im your children</p>
             </Home> 
           </div>
