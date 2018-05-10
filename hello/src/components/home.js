@@ -10,13 +10,17 @@ class Home extends Component {
     }
   }
 
-
-
   onMakeOlder (){
     this.setState({
       age:this.state.age + 3,
     })
   }
+
+
+  handleGreet(){
+    this.props.greet(this.state.age)
+  }
+
 
   render() {
     console.log(this.props)
@@ -24,11 +28,12 @@ class Home extends Component {
       <div className="container">
         <div className="row">
           <div className="col-xs-1 col-xs-offset-11">
+            <button onClick = {this.handleGreet.bind(this)} className="btn btn-primary">img child</button>
             <h1>HOME</h1>
             <h2>you age is {this.state.age}</h2>
             <button onClick={this.onMakeOlder.bind(this)} className="btn btn-primary">im button</button>
           </div>
-          <h6>{this.props.children}</h6>
+          <hr/>
         </div>
       </div>
     );
