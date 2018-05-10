@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Header from './components/header';
 import Home from './components/home';
+import Headers from './components/noStateComponent'
 
 class App extends Component {
   render() {
@@ -26,6 +27,11 @@ class App extends Component {
             <Home name={"MAX"} age={12} user={user}> 
               <p>im your children</p>
             </Home> 
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-xs-1 col-xs-offset-11">
+            <Headers/> 
           </div>
         </div>
       </div>
